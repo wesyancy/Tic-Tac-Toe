@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+:root {
+    --cell-size: 30vmin;
+    --mark-size: calc(var(--cell-size) * .9);
+}
+h1 {
+    font-size: 10vmin;
+}
+h2 {
+    font-size: 5vmin;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+.youWin {
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4ECDC4;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    color: #F7FFF7;
+    font-size: 8vmin;
+    flex-direction: column;
+}
+
+#restart {
+    background-color:#FF6B6B;
+    font-size: 6vmin;
+    color: #F7FFF7;
+    border: solid 1vmin #FFE66D;
+    margin: 10vmin;
+}
+#mainMenuButton {
+    background-color: #FF6B6B;
+    font-size: 6vmin;
+    color: #F7FFF7;
+    border: solid 1vmin #FFE66D;
+    
+
+}
+
+#mainMenu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FF6B6B;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+#onePlayer {
+    font-size: 5vmin;
+    background-color: #4ECDC4;
+    padding: 5vmin;
+    color: #F7FFF7;
+    border: solid 1vmin #FFE66D;
+}
+
+#twoPlayer {
+    font-size: 5vmin;
+    background-color: #4ECDC4;
+    padding: 5vmin;
+    color: #F7FFF7;
+    border: solid 1vmin #FFE66D;
+    margin-bottom: 10vmin;
+
+}
+
+#playerNameStart {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFE66D;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+#playerO {
+    display: none;
+}
+
+label {
+    background-color: #1A535C;
+    color: #F7FFF7;
+    padding: 3vmin;
+    border: solid .25rem #4ECDC4;
+    font-size: 6vmin;
+    margin-bottom: 6vmin;
+}
+
+input {
+    border: solid .5vmin #FBB5B1;
+    font-size: 4vmin;
+    padding: 2vmin;
+    width: 60vmin;
+    text-align: center;
+    color: #349090;
+}
+
+#startGame {
+    background-color: #FF6B6B;
+    font-size: 7vmin;
+    padding: 3vmin;
+    color: #F7FFF7;
+    border: solid .25rem #4ECDC4;
+    margin-top: 6vmin;
+}
+
+#playerIndicator {
+    font-size: 4vmin;
+    color: white;
+    margin-bottom: 0;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell:nth-child(n + 10) {
+    border-bottom: none;
+}
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+
+img {
+    width: var(--mark-size);
+    height: var(--mark-size);
+}
+
+
+.youWin button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+/* 
+.youWin.show {
+    display: flex;
+} */
+
+
+
+
+/* I added the CSS below here from a CodePen where I found this dynamic CSS background code  */
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #FF6B6B 50%, #FFE66D 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
