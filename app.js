@@ -1,6 +1,6 @@
+
+// VARIABLES THAT CHANGE
 let gameState = {};
-let playerX = 'x'
-let playerO = 'circle'
 let currentPlayer
 let usedCells
 let playerXName
@@ -9,6 +9,9 @@ let isOnePlayerGame
 let turn
 
 
+// VARIABLES THAT WON'T CHANGE
+const playerX = 'x'
+const playerO = 'circle'
 const cellElements = document.querySelectorAll('[data-cell]')
 const boardElement = document.getElementById('board')
 const winningMessage = document.getElementById('you-win')
@@ -29,45 +32,43 @@ const winCombos = [
   [2, 4, 6]
 ];
 
-
+// BUTTONS 
 mainMenuButton.addEventListener('click', event => {
   document.getElementById('mainMenu').style.display = "flex"
   document.getElementById('playerNameStart').style.display = "none"
   document.getElementById('board').style.display = "none";
   winningMessage.style.display = 'none'
-  turn === false;
+  turn = false;
   initialState()
 });
 
-
-restartButton.addEventListener('click', function () {
+restartButton.addEventListener('click', event => {
+  event.preventDefault();
   winningMessage.style.display = 'none'
-  console.log(currentPlayer)
-  turn === false;
+  turn = false;
   currentPlayer = turn ? playerO : playerX;
-  console.log(currentPlayer);
   initialState()
 });
-
 
 onePlayerButton.addEventListener('click', event => {
+  event.preventDefault();
   document.getElementById('mainMenu').style.display = "none";
   document.getElementById('playerO').style.display = "none";
   document.getElementById('playerO').value = "Computer";
   document.getElementById('playerNameStart').style.display = "flex";
-  document.getElementById('enterNames').innerHTML = "ENTER PLAYER NAME";
+  document.getElementById('enterNames').innerHTML = "Enter Player Name";
   isOnePlayerGame = true
 });
 
-
 twoPlayerButton.addEventListener('click', event => {
+  event.preventDefault();
   document.getElementById('mainMenu').style.display = "none"
   document.getElementById('playerNameStart').style.display = "flex"
   document.getElementById('playerO').style.display = "flex"
+  document.getElementById('enterNames').innerHTML = "Enter Player Names";
   isOnePlayerGame = false
   
 });
-
 
 startButton.addEventListener('click', event => {
   event.preventDefault();
@@ -79,9 +80,9 @@ startButton.addEventListener('click', event => {
   initialState();
 });
 
-
+// GAME STATES
 function initialState() {
-  turn === false
+  turn = false
   cellElements.forEach(cell => {
     cell.classList.remove(playerX)
     cell.classList.remove(playerO)
@@ -112,19 +113,24 @@ function activeState(event) {
 };
 
 
+// ARTIFICIAL INTELLIGENCE
 function AIclick() {
   let random = Math.floor(Math.random() * 8)
   let counter = 0;
+  
   while (counter < 8 && document.getElementsByClassName('cell')[random].innerHTML) {
       counter++
       random = Math.floor(Math.random() * 8)
-      console.log("re-roll " + random)
     }
-    document.getElementsByClassName('cell')[random].click()
+
+  document.getElementsByClassName('cell')[random].click()
+
+  
 };
 
-
+// PLAYER SELECTION FUNCTION
 function selection(clickedCell, currentPlayer) {
+  
   clickedCell.classList.add(currentPlayer)
   if (currentPlayer === 'circle') {
     let img = document.createElement('img');
@@ -138,7 +144,7 @@ function selection(clickedCell, currentPlayer) {
   }
 };
 
-
+// CHECK FOR A WINNER
 function checkWin(currentPlayer) {
 
   return winCombos.some(playerMoves => {
@@ -148,24 +154,24 @@ function checkWin(currentPlayer) {
   })
 };
 
-
+// END THE GAME
 function endGame(win) {
   if (win) {
-    winMessageText.innerText = `${turn ? playerOName : playerXName} Wins!`
+    winMessageText.innerText = `${turn ? playerOName : playerXName}, You Win!`
   } else {
     winMessageText.innerText = 'Draw!'
   }
   winningMessage.style.display = 'flex'
 };
 
-
+// CHECK FOR A DRAW
 function isDraw() {
   return [...cellElements].every(cell => {
     return cell.classList.contains(playerX) || cell.classList.contains(playerO)
   })
 };
 
-
+// SWAP TURNS
 function swapTurns() {
   turn = !turn
 };

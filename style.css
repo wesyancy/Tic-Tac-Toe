@@ -7,47 +7,10 @@
     --cell-size: 30vmin;
     --mark-size: calc(var(--cell-size) * .9);
 }
-h1 {
-    font-size: 10vmin;
-}
-h2 {
-    font-size: 5vmin;
-}
 
 body {
     margin: 0;
     text-align: center;
-}
-
-.youWin {
-    display: none;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #4ECDC4;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    color: #F7FFF7;
-    font-size: 8vmin;
-    flex-direction: column;
-}
-
-#restart {
-    background-color:#FF6B6B;
-    font-size: 6vmin;
-    color: #F7FFF7;
-    border: solid 1vmin #FFE66D;
-    margin: 10vmin;
-}
-#mainMenuButton {
-    background-color: #FF6B6B;
-    font-size: 6vmin;
-    color: #F7FFF7;
-    border: solid 1vmin #FFE66D;
-    
-
 }
 
 #mainMenu {
@@ -65,24 +28,30 @@ body {
     flex-direction: column;
 }
 
-#onePlayer {
+h1 {
+    font-size: 10vmin;
+    background: linear-gradient(to right, #349090,#4ECDC4 , #349090);
+    border-radius: 50%;
+    border: solid .25rem #4ECDC4;
+    color: #F7FFF7;
+    padding: 5vmin;
+}
+
+h2 {
+    font-size: 5vmin;
+}
+
+button {
+    color: #F7FFF7;
+    padding: 2vmin;
+    cursor: pointer;
     font-size: 5vmin;
     background-color: #4ECDC4;
-    padding: 5vmin;
-    color: #F7FFF7;
     border: solid 1vmin #FFE66D;
-    border-radius: 0%;
 }
 
 #twoPlayer {
-    font-size: 5vmin;
-    background-color: #4ECDC4;
-    padding: 5vmin;
-    color: #F7FFF7;
-    border: solid 1vmin #FFE66D;
     margin-bottom: 10vmin;
-    border-radius: 0%;
-
 }
 
 #playerNameStart {
@@ -99,14 +68,12 @@ body {
     flex-direction: column;
 }
 
-#playerO {
-    display: none;
-}
-
-label {
-    background-color: #1A535C;
+#enterNames {
+    
+    background: linear-gradient(to right,#349090, #4ECDC4 , #349090);
+    border-radius: 50%;
     color: #F7FFF7;
-    padding: 3vmin;
+    padding: 5vmin;
     border: solid .25rem #4ECDC4;
     font-size: 6vmin;
     margin-bottom: 6vmin;
@@ -119,21 +86,20 @@ input {
     width: 60vmin;
     text-align: center;
     color: #349090;
+    cursor: text
+}
+
+#playerO {
+    display: none;
 }
 
 #startGame {
     background-color: #FF6B6B;
     font-size: 7vmin;
-    padding: 3vmin;
-    color: #F7FFF7;
     border: solid .25rem #4ECDC4;
+    
     margin-top: 6vmin;
-}
-
-#playerIndicator {
-    font-size: 4vmin;
-    color: white;
-    margin-bottom: 0;
+    cursor: crosshair
 }
 
 .board {
@@ -187,21 +153,38 @@ img {
     height: var(--mark-size);
 }
 
-
-.youWin button {
-    font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
-    padding: .25em .5em;
-    cursor: pointer;
+#you-win {
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4ECDC4;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    color: #F7FFF7;
+    font-size: 8vmin;
+    flex-direction: column;
 }
-/* 
-.youWin.show {
-    display: flex;
-} */
 
-
-
+#restart {
+    background-color:#FF6B6B;
+    font-size: 6vmin;
+    border: solid 1vmin #FFE66D;
+    
+    margin: 10vmin;
+    cursor: crosshair;
+    
+}
+#mainMenuButton {
+    background-color: #FF6B6B;
+    font-size: 6vmin;
+    
+    border: solid 1vmin #FFE66D;
+    
+    
+}
 
 /* I added the CSS below here from a CodePen where I found this dynamic CSS background code  */
 

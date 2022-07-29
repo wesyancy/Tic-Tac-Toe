@@ -14,7 +14,7 @@
     <script src="app.js" defer></script>
     <title>Tic-Tac-Toe</title>
 
-    
+
 </head>
 
 <body>
@@ -23,41 +23,41 @@
     <form id="mainMenu">
         <h1>Tic-Tac-Toe</h1>
         <h2>How many people are playing?</h2><br><br>
-        <input type="button" id="onePlayer" value="One Player"><br>
-        <input type="button" id="twoPlayer" value="Two Players"><br>
+        <button id="onePlayer" value="One Player">One Player</button><br>
+        <button id="twoPlayer" value="Two Players">Two Players</button><br>
     </form><br><br>
 
 
     <form id="playerNameStart">
-        <label id="enterNames" for="playerX">ENTER PLAYER NAMES</label><br>
+        <h2 id="enterNames">Enter Player Names</h2><br>
         <input type="text" id="playerX" name="playerXName" placeholder="Player One Name Here"><br>
         <input type="text" id="playerO" name="playerOName" placeholder="Player Two Name Here"><br>
         <button id="startGame">Start Game</button>
     </form>
 
-    
+
     <div class="board" id="board" data-board>
-        <div class="bg"></div> 
+        <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+
         <!-- the three divs above correspond to my imported CSS background from CodePen -->
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell=></div>
-        <div class="cell" data-cell=></div>
-        <div class="cell" data-cell=></div>
-        <div class="cell" data-cell=></div>
     </div>
 
-
-    <div class="youWin" id="you-win">
-        <div data-win-message-text></div>
+    <form class="youWin" id="you-win">
+        <h2 id="yW" data-win-message-text>Player Wins</h2>
         <button id="restart">Restart Match-Up</button>
         <button id="mainMenuButton">Main Menu</button>
-    </div>
+    </form>
 
 
 </body>
