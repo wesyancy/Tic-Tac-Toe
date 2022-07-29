@@ -58,6 +58,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: #FF6B6B;
+    border-radius: 0%;
     justify-content: center;
     align-items: center;
     color: white;
@@ -70,6 +71,7 @@ body {
     padding: 5vmin;
     color: #F7FFF7;
     border: solid 1vmin #FFE66D;
+    border-radius: 0%;
 }
 
 #twoPlayer {
@@ -79,6 +81,7 @@ body {
     color: #F7FFF7;
     border: solid 1vmin #FFE66D;
     margin-bottom: 10vmin;
+    border-radius: 0%;
 
 }
 
