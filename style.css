@@ -1,23 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Mochiy Pop One', sans-serif;
+    /* font-family: 'Mouse Memoirs', sans-serif; */
 }
 
 :root {
     --cell-size: 30vmin;
     --mark-size: calc(var(--cell-size) * .9);
 }
+a:link, a:visited, a:hover,a:active { 
+    text-decoration: none;
+}
 
 body {
-    margin: 0;
-    text-align: center;
     background: linear-gradient(to right, #FF6B6B, #FFE66D, #FF6B6B);
+    height: 100%;
+    /* width: 100%; */
+    text-align: center;
+    margin: 0;
+    font-family: 'Mochiy Pop One', sans-serif;
+    flex-direction: column;
+    /* display: none; */
+    /* display: flex; */
+    /* margin-top: 71px; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
 }
+
+
+/* HEADER BAR */
+
+header {
+    font-family: 'Mouse Memoirs', 'Mochiy Pop One';
+    position: fixed;
+    width: 100%;
+    height: 71px;
+    background: #eee;
+}
+.sub-nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+.search-form {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'Mouse Memoirs', 'Mochiy Pop One';
+}
+.search-form input {
+    padding: 0.25rem 0.25rem;
+    flex: 1;
+    border-bottom: 1px solid rgb(16, 97, 0);
+    font-family: 'Mouse Memoirs', 'Mochiy Pop One';
+}
+.search-form button {
+    background: rgb(16, 97, 0);
+    color: white;
+    padding: 0.5rem 0.5rem;
+    border: none;
+    font-size: 20px;
+    font-family: 'Mouse Memoirs', 'Mochiy Pop One';
+}
+.company-name {
+    font-size: 34px;
+    color: rgb(16, 97, 0);
+    min-width: 2rem;
+    margin: 0 1rem;
+    text-align: center;
+}
+.company-name a {
+    color: inherit;
+}
+.company-name:hover {
+    color: rgb(8, 47, 0);
+    transform: scale(1.1);
+}
+.credit-offer {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background: red;
+    padding: 0.25rem 0.25rem;
+    margin: 1 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+/* MAIN BODY */
 
 #mainMenu {
     display: flex;
     position: fixed;
-    top: 0;
+    top: 71px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -27,6 +110,7 @@ body {
     align-items: center;
     color: white;
     flex-direction: column;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
 h1 {
@@ -42,13 +126,14 @@ h2 {
     font-size: 5vmin;
 }
 
-button {
+.buttins {
     color: #F7FFF7;
     padding: 2vmin;
     cursor: pointer;
     font-size: 5vmin;
     background-color: #4ECDC4;
     border: solid 1vmin #FFE66D;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
 #twoPlayer {
@@ -58,6 +143,7 @@ button {
 #playerNameStart {
     display: none;
     position: fixed;
+    margin-top: 71px;
     top: 0;
     left: 0;
     right: 0;
@@ -67,6 +153,7 @@ button {
     align-items: center;
     color: white;
     flex-direction: column;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
 #enterNames {
@@ -77,16 +164,19 @@ button {
     border: solid .25rem #4ECDC4;
     font-size: 6vmin;
     margin-bottom: 6vmin;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
-input {
+.playNames {
     border: solid .5vmin #FBB5B1;
     font-size: 4vmin;
     padding: 2vmin;
     width: 60vmin;
     text-align: center;
     color: #349090;
-    cursor: text
+    cursor: text;
+    font-family: 'Mochiy Pop One', sans-serif;
+
 }
 
 #playerO {
@@ -102,6 +192,7 @@ input {
 }
 
 .board {
+    top: 71px;
     width: 100vw;
     height: 100vh;
     display: none;
@@ -155,7 +246,7 @@ img {
 
 #you-win {
     display: none;
-    top: 0;
+    top: 71px;
     left: 0;
     right: 0;
     bottom: 0;

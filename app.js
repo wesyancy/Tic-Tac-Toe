@@ -76,7 +76,6 @@ startButton.addEventListener('click', event => {
   playerOName = document.getElementById('playerO').value;
   document.getElementById('playerNameStart').style.display = "none";
   document.getElementById('board').style.display = "grid";
-  // document.getElementById('playerIndicator').style.display = "show";
   initialState();
 });
 

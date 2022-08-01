@@ -8,25 +8,43 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
     <title>Tic-Tac-Toe</title>
 </head>
 
+
+
 <body>
+
+    <header id="header">
+        <nav class="sub-nav">
+            <span class="company-name">
+                <a href="../index.html">
+                    !Bang Arcade
+                </a>
+            </span> 
+            <form class="search-form" action="">
+                <input type="text" placeholder="this doesn't work yet">
+                <button type="submit">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+            <a class="credit-offer" href="../index.html">!Bang Softworks ltd.</a>
+        </nav>
+    </header>
 
     <form id="mainMenu">
         <h1>Tic-Tac-Toe</h1>
         <h2>How many people are playing?</h2><br><br>
-        <button id="onePlayer" value="One Player">One Player</button><br>
-        <button id="twoPlayer" value="Two Players">Two Players</button><br>
+        <button class="buttins" id="onePlayer" value="One Player">One Player</button><br>
+        <button class="buttins" id="twoPlayer" value="Two Players">Two Players</button><br>
     </form><br><br>
 
     <form id="playerNameStart">
         <h2 id="enterNames">Enter Player Names</h2><br>
-        <input type="text" id="playerX" name="playerXName" placeholder="Player One Name Here"><br>
-        <input type="text" id="playerO" name="playerOName" placeholder="Player Two Name Here"><br>
-        <button id="startGame">Start Game</button>
+        <input class="playNames" type="text" id="playerX" name="playerXName" placeholder="Player One Name Here"><br>
+        <input class="playNames" type="text" id="playerO" name="playerOName" placeholder="Player Two Name Here"><br>
+        <button class="buttins" id="startGame">Start Game</button>
     </form>
 
     <div class="board" id="board" data-board>
@@ -43,8 +61,8 @@
 
     <form class="youWin" id="you-win">
         <h2 id="yW" data-win-message-text>Player Wins</h2>
-        <button id="restart">Restart Match-Up</button>
-        <button id="mainMenuButton">Main Menu</button>
+        <button class="buttins" id="restart">Restart Match-Up</button>
+        <button class="buttins" id="mainMenuButton">Main Menu</button>
     </form>
 
 </body>
